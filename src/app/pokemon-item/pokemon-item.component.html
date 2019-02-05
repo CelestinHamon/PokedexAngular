@@ -1,0 +1,10 @@
+<li>
+<h4># {{ pId }} -- {{ pName }}</h4>
+<img src="{{pImage}}" class="pokemonImage">
+<div>
+	<h6>Type :</h6>
+	<ul>
+	<li *ngFor="let type of pTypes">{{type}}</li>
+</ul>	
+</div>
+</li>
