@@ -1,29 +1,42 @@
 <nav class="navbar fixed-top navbar-dark bg-dark">
   <span class="navbar-brand">
-      Pokedex
+    Pokedex
   </span>
   <div>
-  <input type="text" [(ngModel)]="searchName" placeholder="Recherche par Nom" class="champ_recherche">
-  <input type="number" [(ngModel)]="searchId" placeholder="Recherche par Id" class="champ_recherche">
-  <select [(ngModel)]="searchType" class="champ_recherche">
-    <option value="">Tous les types</option>
-    <option *ngFor="let type of types"
-    value="{{ type }}">{{ type }}</option>
-  </select>
+    <input
+      type="text"
+      [(ngModel)]="searchName"
+      placeholder="Recherche par Nom"
+      class="champ_recherche"
+    />
+    <input
+      type="number"
+      [(ngModel)]="searchId"
+      placeholder="Recherche par Id"
+      class="champ_recherche"
+    />
+    <select [(ngModel)]="searchType" class="champ_recherche">
+      <option value="">Tous les types</option>
+      <option *ngFor="let type of types" value="{{ type }}">{{ type }}</option>
+    </select>
   </div>
 </nav>
 
 <div class="col-10 container" style="margin-top: 70px">
   <ul class="list-unstyled row">
-    <app-pokemon-item *ngFor="let pokemon of arrPokemon  
-                      | filterName: searchName
-                      | filterType: searchType
-                      | filterId: searchId"
-                      [pId] = "pokemon.id"
-                      [pName] = "pokemon.name"
-                      [pTypes] = "pokemon.type"
-                      [pImage] = "pokemon.img"
-                      class="list-item col-4 border py-2">
+    <app-pokemon-item
+      *ngFor="
+        let pokemon of (arrPokemon
+          | filterName: searchName
+          | filterType: searchType
+          | filterId: searchId)
+      "
+      [pId]="pokemon.id"
+      [pName]="pokemon.name"
+      [pTypes]="pokemon.type"
+      [pImage]="pokemon.img"
+      class="list-item col-4 border py-2"
+    >
     </app-pokemon-item>
   </ul>
 </div>

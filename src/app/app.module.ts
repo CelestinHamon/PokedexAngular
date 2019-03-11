@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PokemonItemComponent } from './pokemon-item/pokemon-item.component';
 
-import { FilterNamePipe, FilterTypePipe, FilterIdPipe  } from './filter.pipe'
+import { FilterNamePipe, FilterTypePipe, FilterIdPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,13 +17,8 @@ import { FilterNamePipe, FilterTypePipe, FilterIdPipe  } from './filter.pipe'
     FilterIdPipe,
     FilterNamePipe
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule
-
-  ],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
